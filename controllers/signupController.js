@@ -1,10 +1,9 @@
-const { error } = require("console");
 const { insertSignupDetails } = require("../db/queries");
 const bcrypt = require("bcryptjs");
 const signupController = async (req, res) => {
   const { firstname, lastname, email, password, confirm_password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
-  const hashedPassword2 = await bcrypt.hash(confirm_password, 10);
+  // const hashedPassword2 = await bcrypt.hash(confirm_password, 10);
 
   let errors = [];
   if (!firstname || !lastname || !email || !password || !confirm_password) {
@@ -24,7 +23,7 @@ const signupController = async (req, res) => {
       lastname,
       email,
       password: hashedPassword,
-      confirm_password: hashedPassword2,
+      // confirm_password: hashedPassword2,
       date: new Date(),
     });
     res.redirect("/log-in");

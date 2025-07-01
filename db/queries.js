@@ -5,12 +5,12 @@ async function insertSignupDetails({
   lastname,
   email,
   password,
-  confirm_password,
+  // confirm_password,
   date,
 }) {
   await pool.query(
-    "INSERT INTO members (firstname,lastname,email,password,confirm_password,date) VALUES ($1,$2,$3,$4,$5,$6)",
-    [firstname, lastname, email, password, confirm_password, date]
+    "INSERT INTO members (firstname,lastname,email,password,date) VALUES ($1,$2,$3,$4,$5)",
+    [firstname, lastname, email, password, date]
   );
 }
 module.exports = { insertSignupDetails };
