@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="home-container">
+      <div class="home-header">
+        <div>
+          <h3>welcome</h3>
+          <!-- ,<i> <%= user %>!</i> -->
+        </div>
+        <div class="home-header-btn">
+          <a href="/new">
+            <button>Message</button>
+          </a>
+          <a href="/log-out"><button>logout</button></a>
+        </div>
+      </div>
+      <div class="home-content">
+        <!-- <div>this is a div content</div> -->
+        <% messages.forEach((msg,index) => { %>
+        <div>
+          <h3>User: <%= msg.user %></h3>
+          <p>Message: <%= msg.text %></p>
+          <p>On <%= msg.added %></p>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+            "
+          >
+            <a href="/admin"><button>admin</button></a>
+            <!-- <a href="/delete"><button>Delete</button></a> -->
+            <form action="/admin" method="post">
+              <input type="hidden" name="id" value="<%= msg.id %>" />
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <div
+        class="index-footer"
+        style="background-color: blue; border: 1px solid white"
+      >
+        <a href="https://github.com/Rarejam/">GitHub</a>
+      </div>
+    </div>
+  </body>
+</html>
