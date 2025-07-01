@@ -294,3 +294,97 @@ input:focus {
   min-height: 30rem;
   background-color: black;
 }
+
+/* ---------- MOBILE FIRST (max-width: 768px) ---------- */
+@media screen and (max-width: 768px) {
+  .index-main-content {
+    width: 95vw;
+    height: auto;
+    padding: 20px;
+  }
+
+  .index-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header1,
+  .header2 {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .sign-up-contents,
+  .log-in-contents {
+    width: 90vw;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  input {
+    width: 80vw;
+    max-width: 90vw;
+  }
+
+  .home-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-header > div {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .home-header-btn {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .home-content > div {
+    width: 90%;
+    height: auto;
+    font-size: 1rem;
+  }
+
+  .new-form {
+    width: 90vw;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  #username,
+  #message {
+    width: 100%;
+    height: 2.5rem;
+  }
+
+  .delete-content {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100px;
+    height: 40px;
+  }
+}
+button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
